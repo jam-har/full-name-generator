@@ -19,34 +19,25 @@ public class FullNameApplication {
         System.out.println("Enter your suffix(es):");
         String suffix = userEntry.nextLine();
 
-    }
-
-
-    public static String FullName(Scanner userEntry){
-        System.out.println("Enter your first name:");
-        String firstName = userEntry.nextLine();
-
-        System.out.println("Enter your middle initial (letters only):");
-        String middleInitial = userEntry.nextLine();
-
-        System.out.println("Enter your last name:");
-        String lastName = userEntry.nextLine();
-
-        System.out.println("Enter your suffix(es):");
-        String suffix = userEntry.nextLine();
+        String fullName;
 
         if (!firstName.isBlank() && !lastName.isBlank() && !middleInitial.isBlank() && !suffix.isBlank()){
-            String fullName = firstName + middleInitial + lastName + suffix;
+            fullName = firstName + middleInitial + lastName + suffix;
         } else if (!firstName.isBlank() && !lastName.isBlank() && middleInitial.isBlank() && !suffix.isBlank()) {
-            String fullName = firstName + lastName + suffix;
+            fullName = firstName + lastName + suffix;
         } else if (!firstName.isBlank() && !lastName.isBlank() && !middleInitial.isBlank() && suffix.isBlank()) {
-            String fullName = firstName + middleInitial + lastName;
+            fullName = firstName + middleInitial + lastName;
         } else if (!firstName.isBlank() && !lastName.isBlank() && middleInitial.isBlank() && suffix.isBlank()) {
-            String fullName = firstName + lastName;
+            fullName = firstName + lastName;
         } else {
             System.out.println("Please enter your full name");
+            return;
         }
+        System.out.println(fullName);
+
 
     }
+
+
 
 }
